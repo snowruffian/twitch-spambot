@@ -27,6 +27,18 @@ if (!channelName) {
 
 // Options passed to the Twitch client
 
+export default {
+  TWITCH_USERNAME,
+  CLIENT_TOKEN,
+  channelName,
+  clientOptions,
+  readInterval,
+  sleepInterval,
+  repetitionThreshold,
+}
+
+// Options passed to the Twitch client
+
 const clientOptions = {
   connection: {
     reconnect: true,
@@ -37,14 +49,4 @@ const clientOptions = {
     password: process.env.CLIENT_TOKEN,
   },
   channels: [channelName],
-}
-
-export default {
-  TWITCH_USERNAME,
-  CLIENT_TOKEN,
-  channelName,
-  clientOptions,
-  readInterval,
-  sleepInterval,
-  repetitionThreshold,
 }
