@@ -2,16 +2,6 @@ import dotenv from 'dotenv'
 
 dotenv.config({ silent: true })
 
-// .env config
-
-const { TWITCH_USERNAME, CLIENT_TOKEN } = process.env
-
-if (TWITCH_USERNAME === undefined || CLIENT_TOKEN === undefined) {
-  console.log('Please provide a valid .env config')
-  process.exit()
-}
-
-// Program arguments read from the console
 
 const programArgs = process.argv.slice(2)
 
@@ -22,6 +12,15 @@ const repetitionThreshold = +programArgs[3] || 4
 
 if (!channelName) {
   console.log('Please provide a channel name')
+  process.exit()
+}
+
+// .env config
+
+const { TWITCH_USERNAME, CLIENT_TOKEN } = process.env
+
+if (TWITCH_USERNAME === undefined || CLIENT_TOKEN === undefined) {
+  console.log('Please provide a valid .env config')
   process.exit()
 }
 
